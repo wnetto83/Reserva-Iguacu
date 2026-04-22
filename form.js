@@ -3,11 +3,11 @@
 
   const slides = Array.from(document.querySelectorAll('.slide'));
   const progressBar = document.querySelector('.form-progress-bar');
-  const TOTAL_STEPS = 4; // telas de pergunta (0..3) contam para progresso
+  const TOTAL_STEPS = 5; // welcome + 4 perguntas (0..4)
 
   let current = 0;
 
-  const data = { nome: '', tipo: '', mensagem: '' };
+  const data = { nome: '', tipo: '', telefone: '', mensagem: '' };
 
   const goTo = (idx) => {
     if (idx === current) return;
@@ -71,9 +71,13 @@
       return true;
     }
     if (current === 3) {
+      data.telefone = document.getElementById('f-tel').value.trim();
+      return true;
+    }
+    if (current === 4) {
       const v = document.getElementById('f-msg').value.trim();
       if (!v) {
-        showError(slides[3], 'Por favor, escreva sua mensagem.');
+        showError(slides[4], 'Por favor, escreva sua mensagem.');
         return false;
       }
       data.mensagem = v;
@@ -120,10 +124,11 @@
 
   // Envio via POST (JSON)
   const submit = async () => {
-    goTo(4); // tela de carregando
+    goTo(5); // tela de carregando
     const payload = {
       nome: data.nome || null,
       tipo: data.tipo,
+      telefone: data.telefone || null,
       mensagem: data.mensagem,
       origem: 'site-reserva-iguacu',
       enviado_em: new Date().toISOString(),
@@ -136,10 +141,10 @@
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error('status ' + res.status);
-      goTo(5);
+      goTo(6);
     } catch (err) {
       console.error('Falha no envio:', err);
-      goTo(6);
+      goTo(7);
     }
   };
 

@@ -75,10 +75,25 @@
     </div>
   </section>
 
-  <!-- Tela 4: mensagem -->
+  <!-- Tela 4: telefone (opcional) -->
   <section class="slide" data-slide="3">
     <div class="slide-inner">
       <p class="q-number">3 <span class="q-arrow">→</span></p>
+      <label class="q-title" for="f-tel">Informe seu telefone <span class="q-optional">(opcional)</span></label>
+      <input type="tel" id="f-tel" name="telefone" class="q-input" placeholder="(45) 99999-0000" autocomplete="tel" inputmode="tel">
+      <div class="slide-actions">
+        <button type="button" class="btn-primary" data-action="next">
+          OK <span class="arrow">✓</span>
+        </button>
+        <span class="hint"><kbd>Enter</kbd> para avançar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tela 5: mensagem -->
+  <section class="slide" data-slide="4">
+    <div class="slide-inner">
+      <p class="q-number">4 <span class="q-arrow">→</span></p>
       <label class="q-title" for="f-msg">Escreva sua mensagem <span class="q-required">*</span></label>
       <textarea id="f-msg" name="mensagem" class="q-textarea" rows="5" placeholder="Descreva aqui..." required></textarea>
       <div class="slide-actions">
@@ -90,16 +105,16 @@
     </div>
   </section>
 
-  <!-- Tela 5: enviando -->
-  <section class="slide" data-slide="4">
+  <!-- Tela 6: enviando -->
+  <section class="slide" data-slide="5">
     <div class="slide-inner centered">
       <div class="spinner" aria-hidden="true"></div>
       <p class="lead">Enviando sua mensagem...</p>
     </div>
   </section>
 
-  <!-- Tela 6: sucesso -->
-  <section class="slide" data-slide="5">
+  <!-- Tela 7: sucesso -->
+  <section class="slide" data-slide="6">
     <div class="slide-inner centered">
       <img src="logo.png" alt="" class="form-logo small">
       <div class="check-icon" aria-hidden="true">✓</div>
@@ -111,8 +126,8 @@
     </div>
   </section>
 
-  <!-- Tela 7: erro -->
-  <section class="slide" data-slide="6">
+  <!-- Tela 8: erro -->
+  <section class="slide" data-slide="7">
     <div class="slide-inner centered">
       <div class="check-icon error" aria-hidden="true">!</div>
       <h1>Não foi possível enviar</h1>
