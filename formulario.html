@@ -6,8 +6,16 @@
 <title>Sugestões, Reclamações e Elogios — Reserva Iguaçu</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="form.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#163A2D">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 </head>
 <body class="form-body">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
 
 <a href="index.html" class="form-back" aria-label="Voltar ao menu principal">← Voltar ao menu</a>
 
