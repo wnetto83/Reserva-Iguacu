@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugestões, Reclamações e Elogios — Reserva Iguaçu</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="form.css">
+</head>
+<body class="form-body">
+
+<a href="index.html" class="form-back" aria-label="Voltar ao menu principal">← Voltar ao menu</a>
+
+<main class="form-stage" aria-live="polite">
+
+  <!-- Tela 1: abertura -->
+  <section class="slide active" data-slide="0">
+    <div class="slide-inner">
+      <img src="logo.png" alt="Condomínio Reserva Iguaçu" class="form-logo">
+      <h1>Sugestões, Reclamações e Elogios</h1>
+      <p class="lead">
+        Este formulário é destinado ao registro de sugestões, reclamações ou
+        elogios sobre assuntos que envolvem o Condomínio Reserva Iguaçu.
+      </p>
+      <button type="button" class="btn-primary" data-action="next">
+        Iniciar <span class="arrow">→</span>
+      </button>
+      <p class="hint">pressione <kbd>Enter</kbd> para começar</p>
+    </div>
+  </section>
+
+  <!-- Tela 2: nome -->
+  <section class="slide" data-slide="1">
+    <div class="slide-inner">
+      <p class="q-number">1 <span class="q-arrow">→</span></p>
+      <label class="q-title" for="f-nome">Informe seu nome <span class="q-optional">(opcional)</span></label>
+      <input type="text" id="f-nome" name="nome" class="q-input" placeholder="Digite aqui..." autocomplete="name">
+      <div class="slide-actions">
+        <button type="button" class="btn-primary" data-action="next">
+          OK <span class="arrow">✓</span>
+        </button>
+        <span class="hint"><kbd>Enter</kbd> para avançar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tela 3: tipo -->
+  <section class="slide" data-slide="2">
+    <div class="slide-inner">
+      <p class="q-number">2 <span class="q-arrow">→</span></p>
+      <p class="q-title">Quero fazer uma <span class="q-required">*</span></p>
+      <div class="q-choices" role="radiogroup" aria-required="true">
+        <label class="choice">
+          <input type="radio" name="tipo" value="Sugestão" required>
+          <span class="choice-key">A</span>
+          <span class="choice-label">Sugestão</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="tipo" value="Reclamação" required>
+          <span class="choice-key">B</span>
+          <span class="choice-label">Reclamação</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="tipo" value="Elogio" required>
+          <span class="choice-key">C</span>
+          <span class="choice-label">Elogio</span>
+        </label>
+      </div>
+      <div class="slide-actions">
+        <button type="button" class="btn-primary" data-action="next" disabled>
+          OK <span class="arrow">✓</span>
+        </button>
+        <span class="error-msg" role="alert"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tela 4: mensagem -->
+  <section class="slide" data-slide="3">
+    <div class="slide-inner">
+      <p class="q-number">3 <span class="q-arrow">→</span></p>
+      <label class="q-title" for="f-msg">Escreva sua mensagem <span class="q-required">*</span></label>
+      <textarea id="f-msg" name="mensagem" class="q-textarea" rows="5" placeholder="Descreva aqui..." required></textarea>
+      <div class="slide-actions">
+        <button type="button" class="btn-primary" data-action="submit">
+          Enviar <span class="arrow">→</span>
+        </button>
+        <span class="error-msg" role="alert"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tela 5: enviando -->
+  <section class="slide" data-slide="4">
+    <div class="slide-inner centered">
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="lead">Enviando sua mensagem...</p>
+    </div>
+  </section>
+
+  <!-- Tela 6: sucesso -->
+  <section class="slide" data-slide="5">
+    <div class="slide-inner centered">
+      <img src="logo.png" alt="" class="form-logo small">
+      <div class="check-icon" aria-hidden="true">✓</div>
+      <h1>Obrigado!</h1>
+      <p class="lead">
+        Sua mensagem foi recebida e será encaminhada à administração do Condomínio.
+      </p>
+      <a href="index.html" class="btn-primary">Voltar ao menu principal</a>
+    </div>
+  </section>
+
+  <!-- Tela 7: erro -->
+  <section class="slide" data-slide="6">
+    <div class="slide-inner centered">
+      <div class="check-icon error" aria-hidden="true">!</div>
+      <h1>Não foi possível enviar</h1>
+      <p class="lead">Verifique sua conexão e tente novamente.</p>
+      <div class="slide-actions">
+        <button type="button" class="btn-primary" data-action="retry">Tentar novamente</button>
+        <a href="index.html" class="btn-secondary">Voltar ao menu</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- barra de progresso -->
+<div class="form-progress" aria-hidden="true">
+  <div class="form-progress-bar" style="width:0"></div>
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>
