@@ -118,23 +118,19 @@
     primary?.click();
   });
 
-  // Envio
+  // Envio (webhook aceita GET com query string)
   const submit = async () => {
     goTo(4); // tela de carregando
-    const payload = {
-      nome: data.nome || null,
+    const params = new URLSearchParams({
+      nome: data.nome || '',
       tipo: data.tipo,
       mensagem: data.mensagem,
       origem: 'site-reserva-iguacu',
       enviado_em: new Date().toISOString(),
-      user_agent: navigator.userAgent,
-    };
+    });
+    const url = `${WEBHOOK}?${params.toString()}`;
     try {
-      const res = await fetch(WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(url, { method: 'GET' });
       if (!res.ok) throw new Error('status ' + res.status);
       goTo(5);
     } catch (err) {
