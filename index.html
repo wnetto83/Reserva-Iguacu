@@ -18,22 +18,19 @@
 
 <nav class="site-nav" aria-label="Navegação do topo">
   <div class="container nav-inner">
-    <a href="#" class="nav-brand">
-      <img src="logo.png" alt="">
-      <span>Reserva Iguaçu — Guia do Morador</span>
-    </a>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
       <span></span><span></span><span></span>
     </button>
+    <div class="nav-search">
+      <input type="search" id="search" placeholder="Buscar termo, regra, tema..." aria-label="Buscar conteúdo">
+    </div>
   </div>
 </nav>
 
 <div class="layout container">
 
   <aside class="sidebar" id="sidebar">
-    <div class="search-box">
-      <input type="search" id="search" placeholder="Buscar regra, tema..." aria-label="Buscar">
-    </div>
+    <p class="sidebar-title">Seções</p>
     <nav aria-label="Navegação principal">
       <ol class="toc">
         <li><a href="#s1">1. Construção e Obras</a></li>
