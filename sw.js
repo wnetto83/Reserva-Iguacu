@@ -1,4 +1,4 @@
-const CACHE = 'reserva-iguacu-v1';
+const CACHE = 'reserva-iguacu-v1776912131910';
 const ASSETS = [
   '/',
   '/index.html',
