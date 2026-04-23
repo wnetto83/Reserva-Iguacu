@@ -356,8 +356,79 @@
         <li>Somente condutores habilitados para o tipo de veículo. Menores proibidos de dirigir motonetas/ciclomotores/mini veículos motorizados. <span class="ref">RI, 89</span></li>
         <li>Veículos de convidados com queima de óleo, freios com defeito, emissão elevada ou pneus desgastados não serão admitidos. <span class="ref">RI, 222</span></li>
         <li>Proibido usar dependências do condomínio para reparos (exceto emergência para chegar a oficina). <span class="ref">RI, 22</span></li>
-        <li>Entrada de material de obra: caminhões de até 16 t. <span class="ref">RI, 184 §7° XIII</span></li>
+        <li>Entrada de material de obra: caminhões de até <strong>16 toneladas</strong> (com carga). <span class="ref">RI, 184 §7° XIII</span></li>
       </ul>
+
+      <!-- Bloco visual de caminhões -->
+      <div class="trucks-block">
+
+        <p class="trucks-rule">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Regra:</strong> caminhões com mais de 16 toneladas carregados não são permitidos. <span class="ref">RI, item 184, §7°, XIII</span></span>
+        </p>
+
+        <div class="trucks-group">
+          <h4 class="trucks-group-title allowed">
+            <span class="badge-allowed">✓ Permitido</span>
+          </h4>
+          <div class="trucks-grid">
+            <div class="truck-card allowed">
+              <div class="truck-img-wrap">
+                <img src="img/toco.jpg" alt="Caminhão toco" loading="lazy">
+              </div>
+              <div class="truck-info">
+                <strong>Caminhão Toco</strong>
+                <p>2 eixos, até 16 t carregado. Atende ao limite do condomínio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trucks-group">
+          <h4 class="trucks-group-title blocked">
+            <span class="badge-blocked">✕ Não permitidos</span>
+          </h4>
+          <div class="trucks-grid multi">
+            <div class="truck-card blocked">
+              <div class="truck-img-wrap">
+                <img src="img/trucado.jpg" alt="Caminhão trucado" loading="lazy">
+              </div>
+              <div class="truck-info">
+                <strong>Caminhão Trucado</strong>
+                <p>3 eixos, ultrapassa 16 t carregado.</p>
+              </div>
+            </div>
+            <div class="truck-card blocked">
+              <div class="truck-img-wrap">
+                <img src="img/cacamba.jpg" alt="Caçamba 4 eixos" loading="lazy">
+              </div>
+              <div class="truck-info">
+                <strong>Caçamba 4 Eixos</strong>
+                <p>Capacidade muito acima do limite permitido.</p>
+              </div>
+            </div>
+            <div class="truck-card blocked">
+              <div class="truck-img-wrap">
+                <img src="img/betoneira.jpg" alt="Betoneira 4 eixos" loading="lazy">
+              </div>
+              <div class="truck-info">
+                <strong>Betoneira 4 Eixos</strong>
+                <p>Peso total com carga supera o limite de 16 t.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="truck-card exception">
+          <div class="truck-exception-icon" aria-hidden="true">⚠️</div>
+          <div class="truck-info">
+            <strong>Caminhão Bomba Lança</strong>
+            <span class="exception-badge">Permitido por exceção</span>
+            <p>Auxiliar da betoneira — bombeia o concreto por uma lança articulada, sem transportar carga pesada. Por isso, é autorizado mesmo com 4 eixos.</p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <!-- ============== SEÇÃO 6 ============== -->
