@@ -508,6 +508,110 @@ tbody tr:hover { background: var(--green-softer); }
 .site-footer p { margin: 4px 0; }
 .site-footer .small { font-size: 13px; color: var(--cream-75); }
 
+/* ========== GALERIA DE MELHORIAS ========== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.gallery-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--green-rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform .15s, box-shadow .15s;
+}
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.gallery-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #f0ede6;
+  cursor: zoom-in;
+}
+.gallery-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .3s ease;
+}
+.gallery-item:hover .gallery-img-wrap img {
+  transform: scale(1.03);
+}
+figcaption {
+  padding: 10px 14px 12px;
+  font-size: 13px;
+  color: var(--green-80);
+  line-height: 1.4;
+  text-align: center;
+  font-style: italic;
+  border-top: 1px solid var(--green-rule);
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(22,58,45,.92);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: zoom-out;
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  object-fit: contain;
+}
+.lightbox-close {
+  position: fixed;
+  top: 16px; right: 20px;
+  background: var(--gold);
+  color: var(--green);
+  border: 0;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.lightbox-caption {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22,58,45,.85);
+  color: var(--cream);
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+@media (max-width: 500px) {
+  .gallery { grid-template-columns: 1fr; }
+}
+
 /* ========== BLOCO DE CAMINHÕES ========== */
 .trucks-block {
   margin-top: 24px;

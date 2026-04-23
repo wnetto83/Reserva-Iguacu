@@ -54,7 +54,8 @@
         <li><a href="#s10"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> <span>10. Coleta de Lixo</span></a></li>
         <li><a href="#s11"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg> <span>11. Taxas e Finanças</span></a></li>
         <li><a href="#s12"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> <span>12. Governança</span></a></li>
-        <li><a href="#s13"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> <span>13. Baixar documentos</span></a></li>
+        <li><a href="#s13"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> <span>13. Melhorias realizadas</span></a></li>
+        <li><a href="#s14"><svg class="toc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> <span>14. Baixar documentos</span></a></li>
       </ol>
     </nav>
   </aside>
@@ -681,7 +682,32 @@
       </details>
     </section>
 
-    <section id="s13" class="section downloads">
+    <section id="s13" class="section">
+      <h2>13. Melhorias realizadas</h2>
+      <p class="intro">Registro fotográfico das melhorias executadas nas áreas comuns do condomínio.</p>
+      <div class="gallery">
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="img/melhoria-espelhos-masc.jpg" alt="Espelhos no banheiro masculino" loading="lazy">
+          </div>
+          <figcaption>Espelhos no banheiro masculino</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="img/melhoria-espelhos-fem.jpg" alt="Espelhos no banheiro feminino" loading="lazy">
+          </div>
+          <figcaption>Espelhos no banheiro feminino</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="img/melhoria-trocador.jpg" alt="Trocador de fraldas no banheiro família" loading="lazy">
+          </div>
+          <figcaption>Trocador de fraldas no banheiro família</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="s14" class="section downloads">
       <h2>13. Baixar documentos</h2>
       <p>Os documentos originais que embasam este guia estão disponíveis para download em PDF:</p>
 
@@ -745,6 +771,42 @@
   </div>
 </footer>
 
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
 <script src="script.js"></script>
+<script>
+  (() => {
+    const overlay = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lightbox-img');
+    const lbCap   = document.getElementById('lightbox-caption');
+    const lbClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.querySelector('.gallery-img-wrap').addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const cap = item.querySelector('figcaption');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = cap ? cap.textContent : '';
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const close = () => {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    };
+
+    lbClose.addEventListener('click', close);
+    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  })();
+</script>
 </body>
 </html>
