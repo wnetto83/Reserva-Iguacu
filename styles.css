@@ -771,26 +771,28 @@ figcaption {
   flex-wrap: wrap;
   gap: 10px;
 }
-.cta-stadium,
-.cta-stadium-mail {
-  background: #25D366;
-  color: #fff;
-  border: 2px solid #25D366;
+.cta-form.cta-stadium {
+  background: #25D366 !important;
+  color: #fff !important;
+  border: 2px solid #25D366 !important;
+  font-weight: 700;
 }
-.cta-stadium:hover {
-  background: #1eb955;
-  border-color: #1eb955;
+.cta-form.cta-stadium:hover {
+  background: #1eb955 !important;
+  border-color: #1eb955 !important;
+  color: #fff !important;
   transform: translateY(-1px);
 }
-.cta-stadium-mail {
-  background: var(--green);
-  color: var(--gold);
-  border-color: var(--green);
+.cta-form.cta-stadium-mail {
+  background: var(--green) !important;
+  color: var(--gold) !important;
+  border: 2px solid var(--green) !important;
+  font-weight: 700;
 }
-.cta-stadium-mail:hover {
-  background: #0f2a20;
-  border-color: #0f2a20;
-  color: var(--gold);
+.cta-form.cta-stadium-mail:hover {
+  background: #0f2a20 !important;
+  border-color: #0f2a20 !important;
+  color: var(--gold) !important;
   transform: translateY(-1px);
 }
 
@@ -799,8 +801,8 @@ figcaption {
   .start-guide h3 { font-size: 19px; }
   .start-guide-steps li { font-size: 14px; padding-left: 46px; }
   .stadium-actions { flex-direction: column; }
-  .cta-stadium,
-  .cta-stadium-mail { text-align: center; justify-content: center; }
+  .cta-form.cta-stadium,
+  .cta-form.cta-stadium-mail { text-align: center; justify-content: center; }
 }
 
 @media (max-width: 900px) {
