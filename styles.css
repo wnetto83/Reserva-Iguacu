@@ -766,8 +766,13 @@ figcaption {
   font-size: 14px;
   color: #4a5953;
 }
-.cta-stadium {
-  justify-self: start;
+.stadium-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cta-stadium,
+.cta-stadium-mail {
   background: #25D366;
   color: #fff;
   border: 2px solid #25D366;
@@ -777,12 +782,25 @@ figcaption {
   border-color: #1eb955;
   transform: translateY(-1px);
 }
+.cta-stadium-mail {
+  background: var(--green);
+  color: var(--gold);
+  border-color: var(--green);
+}
+.cta-stadium-mail:hover {
+  background: #0f2a20;
+  border-color: #0f2a20;
+  color: var(--gold);
+  transform: translateY(-1px);
+}
 
 @media (max-width: 600px) {
   .start-guide { padding: 18px; }
   .start-guide h3 { font-size: 19px; }
   .start-guide-steps li { font-size: 14px; padding-left: 46px; }
-  .cta-stadium { justify-self: stretch; text-align: center; }
+  .stadium-actions { flex-direction: column; }
+  .cta-stadium,
+  .cta-stadium-mail { text-align: center; justify-content: center; }
 }
 
 @media (max-width: 900px) {
