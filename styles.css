@@ -674,6 +674,117 @@ figcaption {
   white-space: nowrap;
 }
 
+/* Start guide — onboarding "vou começar uma obra" */
+.start-guide {
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffdf6 0%, #fdf7e3 100%);
+  padding: 24px 28px;
+  margin: 0 0 24px;
+  box-shadow: 0 4px 14px rgba(22,58,45,.08);
+}
+.start-guide-eyebrow {
+  display: inline-block;
+  background: var(--green);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.start-guide h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--green);
+}
+.start-guide-sub {
+  margin: 0 0 18px;
+  color: #4a5953;
+  font-size: 14px;
+}
+.start-guide-steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: grid;
+  gap: 12px;
+}
+.start-guide-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 12px 14px 12px 52px;
+  background: #fff;
+  border: 1px solid var(--green-rule);
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.start-guide-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-guide-steps a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(205,179,78,.55);
+  text-underline-offset: 2px;
+}
+.start-guide-steps a:hover { text-decoration-color: var(--gold); }
+.start-guide-contact {
+  margin-top: 4px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--gold);
+  display: grid;
+  gap: 14px;
+}
+.start-guide-contact .contact-text strong {
+  display: block;
+  font-size: 16px;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.start-guide-contact .contact-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #4a5953;
+}
+.cta-stadium {
+  justify-self: start;
+  background: #25D366;
+  color: #fff;
+  border: 2px solid #25D366;
+}
+.cta-stadium:hover {
+  background: #1eb955;
+  border-color: #1eb955;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .start-guide { padding: 18px; }
+  .start-guide h3 { font-size: 19px; }
+  .start-guide-steps li { font-size: 14px; padding-left: 46px; }
+  .cta-stadium { justify-self: stretch; text-align: center; }
+}
+
 @media (max-width: 900px) {
   .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
