@@ -748,6 +748,28 @@ figcaption {
   text-underline-offset: 2px;
 }
 .start-guide-steps a:hover { text-decoration-color: var(--gold); }
+.start-guide-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--green);
+  margin: 0 0 22px;
+  box-shadow: 0 4px 12px rgba(22,58,45,.15);
+  transition: transform .15s ease, background .15s ease;
+}
+.start-guide-download span { font-size: 18px; }
+.start-guide-download:hover {
+  background: #0f2a20;
+  border-color: #0f2a20;
+  transform: translateY(-1px);
+}
 .start-guide-contact {
   margin-top: 4px;
   padding-top: 18px;
@@ -800,6 +822,7 @@ figcaption {
   .start-guide { padding: 18px; }
   .start-guide h3 { font-size: 19px; }
   .start-guide-steps li { font-size: 14px; padding-left: 46px; }
+  .start-guide-download { display: flex; justify-content: center; text-align: center; font-size: 15px; }
   .stadium-actions { flex-direction: column; }
   .cta-form.cta-stadium,
   .cta-form.cta-stadium-mail { text-align: center; justify-content: center; }
